@@ -16,6 +16,10 @@
       line-height: 1.8;
       color: #818181;
   }
+      .btn{
+          background-color: #ADC1FB;
+          color: #fff;
+      }
   h2 {
       font-size: 24px;
       text-transform: uppercase;
@@ -34,11 +38,11 @@
       background-color: #ADC1FB;
       color: #fff;
       padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-  }  
+      font-family: system-ui, sans-serif;
+      }  
   .jumbotron p {
       color: #0B40D0;
-      font-family: Montserrat, sans-serif;
+      font-family:  system-ui, sans-serif;
   }
   .container-fluid {
       padding: 60px 50px;
@@ -77,9 +81,9 @@
   .item h4 {
       font-size: 19px;
       line-height: 1.375em;
-      font-weight: 400;
+      font-weight: 100%;
       font-style: italic;
-      margin: 70px 0;
+      margin: 70px 0px;
   }
   .item span {
       font-style: normal;
@@ -149,18 +153,25 @@
       margin-bottom: 20px;
       color: #ADC1FB;
   }
-  .slideanim {visibility:hidden;}
+  .slideanim {visibility:hidden;
+      }
   .slide {
       animation-name: slide;
       -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
+      animation-duration:0.75s;
+      -webkit-animation-duration: 0.75s;
       visibility: visible;
+      
   }
+#myCarousel {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
   @keyframes slide {
     0% {
       opacity: 0;
-      transform: translateY(70%);
+      transform: translateY(20%);
     } 
     100% {
       opacity: 1;
@@ -170,33 +181,55 @@
   @-webkit-keyframes slide {
     0% {
       opacity: 0;
-      -webkit-transform: translateY(70%);
+      -webkit-transform: translateY(20%);
     } 
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 990px) {
     .col-sm-4 {
       text-align: center;
-      margin: 25px 0;
+      margin: 10px 0;
+                width: 100%;
+
     }
+      
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;
     }
-  }
+    .img-reponsive{
+          width: 100%;
+    }
+    }
+            
   @media screen and (max-width: 480px) {
+          .col-sm-4 {
+      image-orientation: 90;
+      margin: 10px 0;
+                width: 100%;
+
+    }
     .logo {
+
         font-size: 150px;
     }
+     .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+      .img-reponsive{
+          width: 100%;
+      }
+   
   }
   </style>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-left navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -204,7 +237,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Sound Spring</a>
+      <a class=" navbar-brand glyphicon glyphicon-link " href="#myPage">ound</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -220,8 +253,8 @@
 
 <div class="jumbotron text-center">
   <h1>Sound Spring</h1> 
-  <p>Our goal is 
-Excellence</p> 
+  <p><strong>Our goal is 
+Excellence</strong></p> 
 
 
 </div>
@@ -238,29 +271,30 @@ $(function() {
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
+  <div class="row imagetiles">
+    <div class=" col-md-6 col-lg-8">
       <h2>About</h2><br>
-      <h4>At Sound Spring, we are committed to developing the utmost quality, value and service… on time, every time.
-</h4><br>
-      <p>A family-owned business for 30 years, our crew has over 50 years 
-of experience, and our plant has a wide variety of manufacturing 
-capabilities; you can see them all on our Services page. Custom 
-work is no problem, either. As a plus, we offer short lead times.</p>
-      <br><a class="btn btn-default btn-lg" href="#contact">Get in Touch</a>
+      <h4>At Sound Spring, we are committed to developing with the utmost quality, value and service… on time, every time.</h4>
+        <br>
+      <p>A family-owned business for 30 years, our staff has over 50 years 
+        of experience, and our plant has a wide variety of manufacturing 
+        capabilities; you can see them all in Services. Custom 
+        work is no problem, either. As an added benefit, we offer short lead times.
+      </p>
+      <br><a class="btn btn-lg" href="#contact">Get in Touch</a>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+    <div class="col-md-6 col-lg-4">
+      <img class="img-reponsive" src="Pictures/Company_Front.jpg">
     </div>
   </div>
 </div>
 
 <div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+  <div class="row imagetiles">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <img class="img-reponsive" src="Pictures/Company_Front.jpg">
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-md-8 col-lg-8">
       <h2>Our Values</h2><br>
       <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -276,7 +310,7 @@ work is no problem, either. As a plus, we offer short lead times.</p>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
+      <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4>POWER</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
@@ -314,7 +348,7 @@ work is no problem, either. As a plus, we offer short lead times.</p>
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>Portfolio</h2><br>
-  <h4>What we have created</h4>
+  <h4>What we have designed</h4>
   <div class="row text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
@@ -378,13 +412,13 @@ work is no problem, either. As a plus, we offer short lead times.</p>
 <div id="pricing" class="container-fluid">
   <div class="text-center">
     <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
+    <h4>Request a free quote</h4>
   </div>
   <div class="row slideanim">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Basic</h1>
+          <h1>Compression</h1>
         </div>
         <div class="panel-body">
           <p><strong>20</strong> Lorem</p>
@@ -403,7 +437,7 @@ work is no problem, either. As a plus, we offer short lead times.</p>
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Pro</h1>
+          <h1>Extension</h1>
         </div>
         <div class="panel-body">
           <p><strong>50</strong> Lorem</p>
@@ -422,7 +456,7 @@ work is no problem, either. As a plus, we offer short lead times.</p>
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Premium</h1>
+          <h1>Torsion</h1>
         </div>
         <div class="panel-body">
           <p><strong>100</strong> Lorem</p>
@@ -494,6 +528,7 @@ marker.setMap(map);
 </footer>
 
 <script>
+
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -508,27 +543,43 @@ $(document).ready(function(){
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top - 50
       }, 900, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
+        window.location.hash = hash - 50;
       });
     } // End if
   });
   
   $(window).scroll(function() {
     $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
+      var pos = $(this).offset().top ;
 
       var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
+        if (pos < winTop + window.screen.height) {
           $(this).addClass("slide");
+        }
+        else{
+            
+           $(this).removeClass("slide"); 
         }
     });
   });
-})
+
+
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + window.screen.height) {
+          $(this).addClass("slide");
+        }
+    });
+  
+});
 </script>
+
 
 </body>
 </html>

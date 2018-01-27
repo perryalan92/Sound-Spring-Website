@@ -8,11 +8,7 @@ text-align: center
 .myCarousel{
     width: 100%   
 }
-.company_logo{
 
-max-height: 20;
-    
-}
 @media (max-width: @screen-xs-max) { 
 
 }

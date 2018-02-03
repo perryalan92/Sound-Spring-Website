@@ -158,8 +158,8 @@
   .slide {
       animation-name: slide;
       -webkit-animation-name: slide;
-      animation-duration:0.75s;
-      -webkit-animation-duration: 0.75s;
+      animation-duration:1s;
+      -webkit-animation-duration: 1s;
       visibility: visible;
       
   }
@@ -191,11 +191,26 @@
   @media screen and (max-width: 990px) {
     .col-sm-4 {
       text-align: center;
-      margin: 10px 0;
+      margin: 10px 30px;
                 width: 100%;
 
     }
-      
+           .col-sm-4 {
+      text-align: center;
+      margin: 30px 0px;
+                width: 100%;
+
+    }   
+    .col-lg-8 {
+                width: 100%;
+
+    }
+     .col-sm-8 {
+      text-align: center;
+      margin: 30px 0;
+                width: 100%;
+
+    }     
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;
@@ -208,7 +223,7 @@
   @media screen and (max-width: 480px) {
           .col-sm-4 {
       image-orientation: 90;
-      margin: 10px 0;
+      margin: 10px 30px;
                 width: 100%;
 
     }
@@ -244,7 +259,8 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#calculator">CALCULATOR</a></li>
+        <li><a href="#quote">QUOTE</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
@@ -272,7 +288,7 @@ $(function() {
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row imagetiles">
-    <div class=" col-md-6 col-lg-8">
+    <div class=" col-lg-6 col-xl-8">
       <h2>About</h2><br>
       <h4>At Sound Spring, we are committed to developing with the utmost quality, value and service… on time, every time.</h4>
         <br>
@@ -283,7 +299,7 @@ $(function() {
       </p>
       <br><a class="btn btn-lg" href="#contact">Get in Touch</a>
     </div>
-    <div class="col-md-6 col-lg-4">
+    <div class="col-lg-6 col-xl-4">
       <img class="img-reponsive" src="Pictures/Company_Front.jpg">
     </div>
   </div>
@@ -291,15 +307,17 @@ $(function() {
 
 <div class="container-fluid bg-grey">
   <div class="row imagetiles">
-    <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="col-xl-4 col-lg-6 ">
       <img class="img-reponsive" src="Pictures/Company_Front.jpg">
     </div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
+      <div class="col-xl-8 col-lg-6 ">
       <h2>Our Values</h2><br>
       <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
+
+
   </div>
 </div>
 
@@ -308,37 +326,37 @@ $(function() {
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
+  <div class="row ">
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-heart logo-small "></span>
       <h4>POWER</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 slideanim">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4>LOVE</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-lock logo-small  slideanim"></span>
       <h4>JOB DONE</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
   <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
+  <div class="row">
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-leaf logo-small  slideanim"></span>
       <h4>GREEN</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-certificate logo-small  slideanim"></span>
       <h4>CERTIFIED</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-wrench logo-small  slideanim"></span>
       <h4 style="color:#303030;">HARD WORK</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
@@ -374,7 +392,7 @@ $(function() {
   </div><br>
   
   <h2>What our customers say</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide text-center">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -407,68 +425,194 @@ $(function() {
     </a>
   </div>
 </div>
+<div id="calculator" class="container-fluid">
+  <div class="text-center">
+    <h2>Spring Calculator</h2>
+    <h4>Make a spring</h4>
+    <div class="btn-group btn-group-justified" id="spring-choice">
+        
+        <div class="btn-group"><button type="button" class="btn btn-primary">Compression</button>  </div>
+        <div class="btn-group"><button type="button" class="btn btn-primary">Extension</button>  </div>
+        <div class="btn-group"><button type="button" class="btn btn-primary">Torsion</button>  </div>
+    </div><br> 
+    <div class="slideanim">
+        <form class="form-horizontal" action="/action_page.php">
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Wire Diameter:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="compression-wire-diameter" placeholder="Enter wire diameter">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Outer Diameter:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="compression-outer-diameter" placeholder="Enter outer Diameter">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Free Length:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="compression-free-length" placeholder="Enter free length">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Compressable Coils:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="compression-active-coils" placeholder="Enter number of compressable coils">
+            </div>
+          </div>
+          <div class="form-group"> 
+              <label class="control-label col-sm-2 col-xs-3" for="number">Type of Wire:</label>
+              <div class="col-sm-10 col-xs-9">
+              <select class="form-control" id="compression-wire-type">
+                  <option value="A228">Music Wire ASTM A228</option>
 
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+                  
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              </div>
+          </div> 
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form> 
+            <div class="slideanim">
+        <form class="form-horizontal" action="/action_page.php">
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Wire Diameter:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="extension-wire-diameter" placeholder="Enter wire diameter">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2 col-xs-3" for="number">Outer Diameter:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="extension-outer-diameter" placeholder="Enter outer Diameter">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <label class="control-label col-sm-2 col-xs-3" for="number">Length Between Inside Of Hooks:</label>
+            <div class="col-sm-10 col-xs-9">
+              <input type="number" class="form-control" id="extension-free-length" placeholder="Enter length between hooks">
+            </div>
+          </div>
+          <div class="form-group"> 
+              <label class="control-label col-sm-2 col-xs-3" for="number">Type of Wire:</label>
+              <div class="col-sm-10 col-xs-9">
+              <select class="form-control" id="compression-wire-type">
+                  <option value="A228">Music Wire ASTM A228</option>
+
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+                  
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              </div>
+          </div> 
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form> 
+        </div>
+    </div>  
+  </div>
+    
+    
+</div>
 <!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
+<div id="quote" class="container-fluid bg-grey">
   <div class="text-center">
     <h2>Pricing</h2>
     <h4>Request a free quote</h4>
   </div>
-  <div class="row slideanim">
+  <div class="row">
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
-        <div class="panel-heading">
+        <div class="panel-heading  slideanim">
           <h1>Compression</h1>
         </div>
-        <div class="panel-body">
+        <div class="panel-body  slideanim">
           <p><strong>20</strong> Lorem</p>
           <p><strong>15</strong> Ipsum</p>
           <p><strong>5</strong> Dolor</p>
           <p><strong>2</strong> Sit</p>
           <p><strong>Endless</strong> Amet</p>
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer  slideanim">
           <h3>$19</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg slideanim">Sign Up</button>
         </div>
       </div>      
     </div>     
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
-        <div class="panel-heading">
+        <div class="panel-heading  slideanim">
           <h1>Extension</h1>
         </div>
-        <div class="panel-body">
+        <div class="panel-body  slideanim">
           <p><strong>50</strong> Lorem</p>
           <p><strong>25</strong> Ipsum</p>
           <p><strong>10</strong> Dolor</p>
           <p><strong>5</strong> Sit</p>
           <p><strong>Endless</strong> Amet</p>
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer  slideanim">
           <h3>$29</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg  slideanim">Sign Up</button>
         </div>
       </div>      
     </div>       
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
-        <div class="panel-heading">
+        <div class="panel-heading  slideanim">
           <h1>Torsion</h1>
         </div>
-        <div class="panel-body">
+        <div class="panel-body  slideanim">
           <p><strong>100</strong> Lorem</p>
           <p><strong>50</strong> Ipsum</p>
           <p><strong>25</strong> Dolor</p>
           <p><strong>10</strong> Sit</p>
           <p><strong>Endless</strong> Amet</p>
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer  slideanim">
           <h3>$49</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
+          <button class="btn btn-lg  slideanim">Sign Up</button>
         </div>
       </div>      
     </div>    
@@ -476,7 +620,7 @@ $(function() {
 </div>
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
+<div id="contact" class="container-fluid">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
@@ -543,7 +687,7 @@ $(document).ready(function(){
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top - 50
+        scrollTop: $(hash).offset().top -50 
       }, 900, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)

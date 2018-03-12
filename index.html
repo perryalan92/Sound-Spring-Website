@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Sound Spring</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--include jQuery Validation Plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+      margin: 0;
+  }
+      .btn{
+      margin: 15px 0;
+      background-color: #ADC1FB;
+      color: #fff;
+          text-decoration-color: #fff;
+      }
+.has-error .control-label,
+.has-error .help-block,
+.has-error .form-control-feedback {
+    color: #red;
+}
+
+.has-success .control-label,
+.has-success .help-block,
+.has-success .form-control-feedback {
+    color: #green;
+}
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #ADC1FB;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: system-ui, sans-serif;
+      }  
+  .jumbotron p {
+      color: #0B40D0;
+      font-family:  system-ui, sans-serif;
+  }
+
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+ 
+  .logo-small {
+      color: #ADC1FB;
+      font-size: 50px;
+  }
+  .logo {
+      color: #ADC1FB;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #ADC1FB;
+  }
+  .carousel-indicators li {
+      border-color: #ADC1FB;
+  }
+      
+  .carousel-indicators li.active {
+      background-color: #ADC1FB;
+  }
+
+     .container-fluid .text-center .calculator {
+          display:none;
+          opacity: 0;
+      }
+    .dropdown-menu.dropdown-xs-only {
+        display: inline;
+        left: inherit;
+        top: inherit;
+        position: relative;
+        margin: inherit;
+        padding: inherit;
+        border: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        background-color: inherit;
+        -webkit-box-shadow: inherit;
+        box-shadow: inherit;
+    }
+    .form-horizontal .control-label.text-left{
+    text-align: left;
+}
+.img-center {
+  position: relative;
+  top: 50;
+  left:50%;
+  transform: translate(-50%,0px);
+    
+  }
+  .img-reponsive{
+      width: 80%;
+      margin: 10% 0px ;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 100%;
+      font-style: italic;
+      margin: 70px 0px;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #ADC1FB; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #ADC1FB;
+      background-color: #fff !important;
+      color: #ADC1FB;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #ADC1FB !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #ADC1FB;
+      color: #fff;
+  }
+      .row{
+          justify-content: center;
+          align-items: center;
+      }
+      .nav-tabs{
+          border: none;
+          margin-bottom: 15px;
+      }
+      .navbar-header{
+          float: left;
+      }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #fff;
+      border-bottom-color:#ADC1FB;
+      z-index: 9999;
+      font-size: 16px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 5;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #ADC1FB !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #ADC1FB !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #ADC1FB;
+  }
+  .slideanim {visibility:hidden;
+      }
+  .slide {.,
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+visibility:visible;
+      
+  }
+      .reverseSlide{
+
+           animation-name: slide;
+    -webkit-animation-name: slide; 
+
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;   
+          visibility: visible;
+
+      }
+#myCarousel {
+  width: 100%;
+  height:inherit;
+  padding: 0px 150px;
+}
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(100%);
+    } 
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(0%);
+    }
+  }
+      @keyframes reverseSlide {
+    100% {
+      opacity: 0;
+      transform: translateY(0%);
+    } 
+    0% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+  }
+  @-webkit-keyframes reverseSlide {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(-100%);
+    } 
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(0%);
+    }
+  }  
+  @media screen and (max-width: 1200px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-toggle .span {
+      display: none;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    }
+
+  @media screen and (max-width: 768px) {
+    .logo {
+        font-size: 150px;
+    }
+     .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .tolerance{
+        display: none;
+    }
+
+   @media(max-width: 480px){
+  .btn-group {
+    display: block !important;
+    width: auto !important;
+  }
+  }
+   
+
+}
+
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" >
+
+<nav class="navbar navbar-default navbar-left navbar-fixed-top" id="top-navigator">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class=" navbar-brand glyphicon glyphicon-link " href="#myPage">ound</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about"><strong>ABOUT</strong></a></li>
+        <li><a href="#portfolio"><strong>PORTFOLIO</strong></a></li>
+        <li><a href="#calculator"><strong>CALCULATOR</strong></a></li>
+        <li><a href="#contact"><strong>CONTACT</strong></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Sound Spring</h1> 
+  <p><strong>Our goal is Excellence</strong></p> 
+
+
+</div>
+
+<script>
+$(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') ) {
+        $(this).collapse('hide');
+    }
+});;
+    </script>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-xl-8">
+      <h2>About</h2><br>
+      <h4>At Sound Spring, we are committed to developing with the utmost quality, value and service… on time, every time.</h4>
+        <br>
+      <p>A family-owned business for 30 years, our staff has over 50 years 
+        of experience, and our plant has a wide variety of manufacturing 
+        capabilities; you can see them all in Services. Custom 
+        work is no problem, either. As an added benefit, we offer short lead times.
+      </p>
+      <br><a class="btn btn-lg" href="#contact">Get in Touch</a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-xl-4 ">
+      <img class="mx-auto d-block img-reponsive center-block img-center " src="Pictures/Company_Front.jpg">
+    </div>
+  </div>
+</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-md-6 col-md-push-6 align-middle">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="col-md-6 col-md-pull-6" >
+      <img class="mx-auto d-block img-reponsive align-middle img-center" src="Pictures/At_Work.jpg">
+    </div>
+
+
+
+  </div>
+</div>
+
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center ">
+  <h2>Portfolio</h2><br>
+  <h4>What we have designed</h4>
+  <div class="row text-center ">
+    <div class="col-sm-3">
+      <div class="thumbnail">
+          <div id="compressionCarousel" class="carousel  text-center" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#compressionCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#compressionCarousel" data-slide-to="1"></li>
+              <li data-target="#compressionCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Coily.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Rubber.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Company_Front.jpg">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#compressionCarousel" role="button" data-slide="prev">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#compressionCarousel" role="button" data-slide="next">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+                  <p><strong>Compression Springs</strong></p>
+        <p>Force applied toward coils</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="thumbnail">
+             <div id="extensionCarousel" class="carousel text-center" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#extensionCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#extensionCarousel" data-slide-to="1"></li>
+              <li data-target="#extensionCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Coily.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Rubber.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Company_Front.jpg">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#extensionCarousel" role="button" data-slide="prev">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#extensionCarousel" role="button" data-slide="next">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+                  <p><strong>Extension Springs</strong></p>
+        <p>Force applied away from coils</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="thumbnail">
+             <div id="torsionCarousel" class="carousel  text-center" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#torsionCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#torsionCarousel" data-slide-to="1"></li>
+              <li data-target="#torsionCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Coily.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Rubber.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Company_Front.jpg">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#torsionCarousel" role="button" data-slide="prev">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#torsionCarousel" role="button" data-slide="next">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+            <p><strong>Torsion Springs</strong></p>
+        <p>Force applied around coils</p>
+      </div>
+    </div>
+          <div class="col-sm-3">
+      <div class="thumbnail">
+             <div id="wireformCarousel" class="carousel text-center" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#wireformCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#wireformCarousel" data-slide-to="1"></li>
+              <li data-target="#wireformCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Coily.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Product_Rubber.jpg">
+              </div>
+              <div class="item">
+                <img class="mx-auto d-block img-reponsive " src="Pictures/Company_Front.jpg">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#wireformCarousel" role="button" data-slide="prev">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#wireformCarousel" role="button" data-slide="next">
+              <span class="glyphicon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <p><strong>Wire Forms</strong></p>
+        <p>To solve life's other problems</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>What our customers say</h2>
+  <div id="myCarousel" class="carousel  text-center" data-ride="carousel" data-interval="12500">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>“Consistent, quality parts on time. What’s not to like?”<br><span>Brian Wingert, CPM, CPIM, Senior BuyerSynrad Inc.</span></h4>
+      </div>
+      <div class="item">
+        <h4>“Sound Spring is Vaupell’s major supplier of springs and spring clips. They have achieved this status with Vaupell by offering favorable pricing, flexibility in order fulfillment, and quick turnaround when needed." <br><span>Jim Berett, Vaupell Purchasing Manager</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Your help was crucial to completing the last minute changes in design”
+<br><span>Ken Williams,Plastic Injection Molding, Inc </span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    
+<!-- Container (Services Section) -->
+<div id="certifications" class="container-fluid bg-grey text-center">
+  <h2>CERTIFICATIONS</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row ">
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-heart logo-small "></span>
+      <h4>SMI</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>BBB</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4 slideanim">
+      <span class="glyphicon glyphicon-lock logo-small  slideanim"></span>
+      <h4>ISO</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+</div>  
+<div id="calculator" class="container-fluid">
+  <div class="text-center">
+    <h2>Spring Calculator</h2>
+    <h4>Make a spring</h4>
+      
+      <ul class="nav nav-justified nav-pills" id="calculatorTabs" role="tablist" name="calculatorTabs" >
+            <li class="nav-item "><a class=" btn-primary btn-lg btn " id="compressN" type="button" role="button" data-toggle="tab" href="#Compression" value="Compression"><strong>Compression</strong></a></li>
+            <li class="nav-item"><a id="exteN" class="btn btn-lg  btn-primary" type="button" role="button" data-toggle="tab" href="#Extension" value="Extension"><strong>Extension</strong></a></li>
+            <li class="nav-item"> <a class="  btn-primary btn-lg  btn  " id="torsN" type="button" role="button" data-toggle="tab" href="#Torsion" value="Torsion"><strong>Torsion</strong></a></li>
+            <li class="nav-item"><a class=" btn-primary btn-lg  btn  " type="button" role="button" id="wire_fN" data-toggle="tab" href="#Wire_Form" value="Wire Forms"><strong>Wire Forms</strong></a>
+            </li>
+      </ul>
+    
+   
+
+        <br>  <span class="text-center">Measurements in mm</span> <br>
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane  fade" id="Compression">
+        <form class="block-form block-form-default needs-validation" id="compressForm" role="form">
+     <div class="row">
+         
+        <div class="col-xs-12">
+            <div class="form-group has-feedback "> 
+                <label class="control-label form-control-static text-right" for="compressEnds">Type of Ends:</label>
+            
+       
+            <div> 
+              <ul class="nav nav-justified nav-pills" role="group" id="compressEnds" role="tablist" name="compressEnds" data-toggle="buttons">
+                    <li class="nav-item "><a class=" btn-primary btn " id="compress-button-0" type="radio" name="options" data-toggle="tab" value="0"><strong>Closed and Square</strong></a></li>
+                    <li class="nav-item"><a id="compress-button-1" class=" btn-primary  btn " type="radio" name="options" role="button" data-toggle="tab" value="1"><strong>Closed and Ground</strong></a></li>
+                    <li class="nav-item"> <a class="  btn-primary  btn  " id="compress-button-2" type="radio" name="options" role="button" data-toggle="tab"  value="2"><strong>Double Closed</strong></a></li>
+                    <li class="nav-item"><a class=" btn-primary  btn  " type="button" type="radio" name="options" id="compress-button-3" data-toggle="tab" value="3"><strong>Open Ends</strong></a>
+                    </li>
+              </ul>
+
+        </div>
+    </div>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+              <label class="control-label required" for="compression-wire-type">Type of Wire:</label>
+              
+              <select class="form-control custom-select" id="compression-wire-type" name="compression-wire-type">
+                  <option value="A228">Music Wire ASTM A228</option>
+
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              
+
+                </div>
+            </div>
+            <div class="col-sm-6  tolerance">
+            <div class="form-group">
+                <label for="compression-tolerance-label" class="sr-only" >tolerance</label>
+            
+                <div>
+               <p type="text"  id="compression-tolerance-label"  name="compression-tolerance-label" class="form-control-static tolerance" value="Tolerances" >
+                   <strong>Tolerances</strong></p>
+                </div>
+            </div>
+            </div>
+    </div>
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                   <label class="control-label" for="compression-wire-diameter">Wire Diameter:</label>
+                    <div>
+                   <span><input type="number" min="0" class="form-control" name="metric" id="compression-wire-diameter" placeholder="Enter wire diameter" data-error-msg="Wire diameter must be greater than 0."  required></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">  
+                    <div class="form-group">
+                    
+          
+                    <label class="control-label tolerance" for="compression-wire-diameter-tol-+" >- Tolerance</label>
+
+                    <div>
+                    <span><input type="number" min="0" class=" form-control" name="metric" id="compression-wire-diameter-tol-+" placeholder="+ Tolerance" data-error-msg="Wire diameter must be greater than 0."></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+              </div>
+              </div>
+                <div class="col-sm-3 col-xs-12">  
+                    <div class="form-group">
+                    <label class="control-label tolerance" for="compression-wire-diameter-tol--">+ Tolerance</label>
+                        <div>
+                            <span><input type="number" min="0" class="form-control" name="metric" id="compression-wire-diameter-tol--" placeholder="- Tolerance" data-error-msg="Wire diameter must be greater than 0."></span>
+                        </div>
+                    </div>
+            </div>
+            </div> 
+              <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">      
+            <label class="control-label" for="compression-outer-diameter">Outer Diameter:</label>
+            <div>
+                <span><input type="number" class="form-control has-feedback" name="metric" id="compression-outer-diameter" placeholder="Enter outer Diameter" data-error-msg="Outer diameter must be greater than 0." ></span>
+            </div>
+                </div>
+                  </div>
+           <div class="col-sm-3 col-xs-12">
+                <div class="form-group">                 
+                    <label class="control-label tolerance" for="compression-outer-diameter-tol--">- Tolerance</label>
+                    <div>
+                        <span><input type="number" min="0" class="form-control form-group has-feedback" name="metric" id="compression-outer-diameter-tol--" placeholder="- Tolerance" data-error-msg="Wire diameter must be greater than 0."  required></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group">   
+                    <label class="control-label tolerance" for="compression-outer-diameter-tol-+">+ Tolerance</label>
+             <div>
+                <span><input type="number" min="0" class="form-control has-feedback" name="metric" id="compression-outer-diameter-tol-+" placeholder="+ Tolerance" data-error-msg="Wire diameter must be greater than 0."  required></span>
+            </div>                    
+             </div>
+                </div> 
+         </div>
+            <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">  
+                            <label class="control-label" for="compression-free-length">Free Length:</label>
+                            <div>
+                                <span><input type="number" class="form-control has-feedback" name="metric" id="compression-free-length" placeholder="Enter free length" data-error-msg="Outer diameter must be greater than 0."  required></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="form-group">  
+                            <label class="control-label tolerance" for="compression-free-length-tol--">- Tolerance</label>
+                            <div>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="metric" id="compression-free-length-tol--" placeholder="- Tolerance" data-error-msg="Wire diameter must be greater than 0."></span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="form-group">  
+                            <label class="control-label tolerance" for="compression-free-length-tol-+">+ Tolerance</label>
+                            <div>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="metric" id="compression-free-length-tol-+" placeholder="+ Tolerance" data-error-msg="Free length must be greater than 0."  required></span>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                
+            </div>
+            <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">                    
+                            <label class="control-label " for="compression--active-coils">Compressable Coils:</label>
+                            <div>
+                                <span><input type="number" class="form-control has-feedback" name="metric" id="compression--active-coils" placeholder="Enter compressable coils" data-error-msg="Outer diameter must be greater than 0."  required ></span>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-sm-3 col-xs-12">
+                            <div class="form-group">                    
+                                <label class="control-label tolerance  has-feedback" for="compression-active-coils-tol--">- Tolerance</label>
+                                <div >
+                                    <span>
+                                        <input type="number" min="0" class="form-control " name="metric" id="compression-active-coils-tol--" placeholder="- Tolerance" data-error-msg="Tolerance must be greater than 0."  required>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="form-group">                    
+                            <label class="control-label tolerance " for="compression-active-coils-tol-+">+ Tolerance</label>
+                            <div>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="metric" id="compression-active-coils-tol-+" placeholder="+ Tolerance" data-error-msg="Tolerance must be greater than 0."  required></span>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                    </div>
+         
+            
+           <div class="row">
+               
+               
+            
+            <div class="col-sm-12">
+                <div class="form-group">
+                  <button type="submit" id="compression-submit" name="compression-submit" class="btn btn-lg btn-default">Submit</button>
+                </div>
+          </div>
+                  
+            </div>
+      
+    </form>
+      </div>
+    <div role="tabpanel" class="tab-pane  fade" id="Extension">
+    <form class="block-form block-form-default needs-validation" id="extensionForm" novalidate>
+        <div class="row">
+         
+            <div class="col-xs-12">
+                <div class="form-group has-feedback "> 
+                <label class="control-label form-control-static text-right" for="extensionEnds">Type of Ends:</label>
+                    <div> 
+              <ul class="nav nav-justified nav-pills" role="group" id="extensionEnds" role="tablist" name="extensionEnds" data-toggle="buttons">
+                    <li class="nav-item "><a class=" btn-primary btn " id="extension-button-0" type="radio" name="extension-button-0" data-toggle="tab" value="Compression"><strong>Machine Hooks</strong></a></li>
+                    <li class="nav-item"><a id="extension-button-1" class=" btn-primary  btn " type="radio" name="extension-button-1" role="button" data-toggle="tab"  value="Extension"><strong>Cross Over Center Hooks</strong></a></li>
+                    <li class="nav-item"> <a class="  btn-primary  btn  " id="extension-button-2" type="radio" name="extension-button-2" role="button" data-toggle="tab"  value="Torsion"><strong>Side Hooks/Loops</strong></a></li>
+                    <li class="nav-item"><a class=" btn-primary  btn  " type="radio" name="extension-button-3" id="extn_hook" data-toggle="tab" value="Wire Forms"><strong>Extended Hooks</strong></a>
+                    </li>
+              </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+              <label class="control-label required" for="extension-wire-type">Type of Wire:</label>
+              
+              <select class="form-control custom-select" id="extension-wire-type" name="extension-wire-type">
+                  <option value="A228">Music Wire ASTM A228</option>
+
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              
+
+                </div>
+            </div>
+            <div class="col-sm-6  tolerance">
+            <div class="form-group">
+                <label for="extension-tolerance-label" class="sr-only" >tolerance</label>
+            
+                <div>
+               <p type="text"  id="extension-tolerance-label"  name="extension-tolerance-label" class="form-control-static tolerance" value="Tolerances" >
+                   <strong>Tolerances</strong></p>
+                </div>
+            </div>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="extension-wire-diameter">Wire Diameter:</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="extension-wire-diameter" id="extension-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-wire-diameter-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control  form-group has-feedback" name="extension-wire-diameter-tol--" id="extension-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+                        <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-wire-diameter-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control form-group has-feedback" name="extension-wire-diameter-tol-+" id="extension-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>  
+            
+                </div>
+            </div>
+        </div>     
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="number">Outer Diameter:</label>
+                    <div>
+                     <input type="number" class="form-control" name="extension-outer-diameter" id="extension-outer-diameter" placeholder="Enter outer diameter." data-error="Outer diameter must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-wire-diameter-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="extension-outer-diameter-tol--" id="extension-outer-diameter-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                    </div>   
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-outer-diameter-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="extension-outer-diameter-tol-+" id="extension-outer-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div>            
+       
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="number">Length Between Inside Of Hooks:</label>
+                    <div>
+                     <input type="number" class="form-control" name="extension-free-length" id="extension-free-length" placeholder="Enter length between inside hooks." data-error="Length must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-free-length-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="extension-free-length-tol--" id="extension-free-length-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>  
+            
+                </div>
+            </div>
+                          <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-free-length-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="extension-free-length-tol-+" id="extension-free-length-tol-+" placeholder="+ Tolerance" data-error="Length must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div> 
+        <div class="row" id="hook_lenth_1" style="display: none">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="number" >Hook Length 1:</label>
+                    <div >
+                     <input type="number" class="form-control" name="extension-hook-length-1" id="extension-hook-length-1" placeholder="Enter length of hook length 1." data-error="Hook Length must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-hook-length-1-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="extension-hook-length-1-tol--" id="extension-hook-length-1-tol--" placeholder="- Tolerance" data-error="Tolerance must be greater than 0.">
+                    </div> 
+            
+                </div>
+            </div>
+                        <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="extension-hook-length-1-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="extension-hook-length-1-tol-+" id="extension-hook-length-1-tol-+" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0.">
+                    </div>     
+            
+                </div>
+            </div>
+        </div>       
+        <div class="row"  id="hook_lenth_2" style="display: none">
+            <div class="col-sm-6 col-xs-12">
+                <label class="control-label" for="number" >Hook Length 2:</label>
+                <div>
+                 <input type="number" class="form-control" name="extension-hook-length-2" id="extension-hook-length-2" placeholder="Enter length of hook length 2." data-error="Outer diameter must be greater than 0." >
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                     <label class="control-label tolerance" for="extension-hook-length-2-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="extension-hook-length-2-tol--" id="extension-hook-length-2-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div> 
+            
+                </div>
+            </div>
+                        <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                     <label class="control-label tolerance" for="extension-hook-length-2-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="extension-hook-length-2-tol-+" id="extension-hook-length-2-tol-+" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0.">
+                    </div>      
+
+                </div>
+            </div>
+        </div>       
+                
+
+      
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="submit" id="extension-submit" class="btn btn-lg btn-default">Submit</button>
+            </div>
+          </div>
+        </form> 
+      </div>
+    <div role="tabpanel" class="tab-pane  fade" id="Torsion">
+     <form class="block-form block-form-default needs-validation" id="torsionForm" novalidate>
+        <div class="row">
+         
+            <div class="col-xs-12">
+                <div class="form-group has-feedback "> 
+                <label class="control-label form-control-static text-right" for="torsionEnds">Direction of rotation:</label>
+                    <div> 
+              <ul class="nav nav-justified nav-pills" role="group" id="torsionEnds" role="tablist" name="torsionEnds" data-toggle="buttons">
+                    <li class="nav-item "><a class=" btn  btn-primary" id="torsion-button-0" type="radio" name="torsion-button-0" data-toggle="tab" value="Torsion"><strong>Left Hand</strong></a></li>
+                    <li class="nav-item"><a id="torsion-button-1" class=" btn btn-primary " type="radio" name="torsion-button-1" role="button" data-toggle="tab"  value="Torsion"><strong>Right Hand</strong></a></li>
+              </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+              <label class="control-label required" for="torsion-wire-type">Type of Wire:</label>
+              
+              <select class="form-control custom-select" id="torsion-wire-type" name="torsion-wire-type">
+                  <option value="A228">Music Wire ASTM A228</option>
+
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              </div>
+</div> 
+            <div class="col-sm-6  tolerance">
+            <div class="form-group">
+                <label for="torsion-tolerance-label" class="sr-only" >tolerance</label>
+            
+                <div>
+               <p type="text"  id="torsion-tolerance-label"  name="torsion-tolerance-label" class="form-control-static tolerance" value="Tolerances" >
+                   <strong>Tolerances</strong></p>
+                </div>
+            </div>
+            </div>
+              
+                   
+         </div>
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="torsion-wire-diameter">Wire Diameter:</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="torsion-wire-diameter" id="torsion-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-wire-diameter-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control  form-group has-feedback" name="torsion-wire-diameter-tol--" id="torsion-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-wire-diameter-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control form-group has-feedback" name="torsion-wire-diameter-tol-+" id="torsion-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>  
+            
+                </div>
+            </div>
+        </div>     
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="number">Outer Diameter:</label>
+                    <div>
+                     <input type="number" class="form-control" name="torsion-outer-diameter" id="torsion-outer-diameter" placeholder="Enter outer Diameter." data-error="Outer diameter must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-wire-diameter-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="torsion-outer-diameter-tol--" id="torsion-outer-diameter-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                    </div>   
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-outer-diameter-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="torsion-outer-diameter-tol-+" id="torsion-outer-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div>            
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="number">Number of Active Coils:</label>
+                    <div>
+                     <input type="number" class="form-control" name="torsion-active-coils" id="torsion-active-coils" placeholder="Enter number of active coils." data-error="Outer diameter must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-active-coils-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="torsion-active-coils-tol--" id="torsion-active-coils-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                    </div>   
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-active-coils-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="torsion-active-coils-tol-+" id="torsion-active-coils-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div>            
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="torsion-leg-length-1">Length Of Leg 1:</label>
+                    <div>
+                     <input type="number" class="form-control" name="torsion-leg-length-1" id="torsion-leg-length-1" placeholder="Enter length of leg 1." data-error="Outer diameter must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-leg-length-1-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="torsion-leg-length-1-tol--" id="torsion-leg-length-1-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                    </div>   
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-leg-length-1-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="torsion-leg-length-1-tol-+" id="torsion-leg-length-1-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label" for="torsion-leg-length-2">Length Of Leg 2:</label>
+                    <div>
+                     <input type="number" class="form-control" name="torsion-leg-length-2" id="torsion-leg-length-2" placeholder="Enter length of leg 2." data-error="Outer diameter must be greater than 0." >
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-leg-length-2-tol--">- Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control " name="torsion-leg-length-2-tol--" id="torsion-leg-length-2-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                    </div>   
+            
+                </div>
+            </div>
+                         <div class="col-sm-3 col-xs-12">
+                <div class="form-group"> 
+                    <label class="control-label tolerance" for="torsion-leg-length-2-tol-+">+ Tolerance</label>
+                    <div>
+                      <input type="number" min="0" class="form-control" name="torsion-leg-length-2-tol-+" id="torsion-leg-length-2-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                    </div>    
+            
+                </div>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group"> 
+                     <button type="submit" id="torsion-submit" class="btn btn-lg btn-default">Submit</button>
+
+                </div>
+              </div>
+         </div>
+         
+         
+        </form>
+
+    </div>
+    <div role="tabpanel" class="tab-pane  fade" id="Wire_Form">
+    <form class="block-form block-form-default needs-validation" id="torsionForm" novalidate>
+        <div class="row">
+         
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group has-feedback "> 
+                  <label class="control-label" for="wire_form-wire-type">Type of Wire:</label>
+              <div>
+              <select class="form-control" id="wire_form-wire-type" required>
+                  <option value="A228">Music Wire ASTM A228</option>
+
+                  <option value="A229">Oil Tempered MB ASTM A229</option>
+
+                  <option value="A230">Carbon Valve ASTM A230</option>
+
+                  <option value="A227">Hard Drawn ASTM A227</option>
+
+                  <option value="A313_17">Stainless 17-7 ASTM A313</option>
+
+                  <option value="A313_302">Stainless 302 ASTM A313</option>
+
+                  <option value="A316">Stainless 316 ASTM A316</option>
+
+                  <option value="A401">Chrome Silicon ASTM A401</option>
+
+                  <option value="B197">Beryllium copper ASTM B197</option>
+                  
+                  <option value="B159">Phos-Brnz Grd A ASTM B159</option>
+              </select>
+              </div>
+                </div>
+            </div>
+            <div class="col-sm-6  tolerance">
+            <div class="form-group">
+                <label for="torsion-tolerance-label" class="sr-only" >tolerance</label>
+            
+                <div>
+               <p type="text"  id="torsion-tolerance-label"  name="torsion-tolerance-label" class="form-control-static tolerance" value="Tolerances" >
+                   <strong>Tolerances</strong></p>
+                </div>
+            </div>
+            </div>
+          </div> 
+                <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group has-feedback "> 
+
+            <label class="control-label" for="wire_form-wire-diameter">Wire Diameter:</label>
+            <div >
+              <input type="number" min="0" class="form-control " name="wire_form-wire-diameter" id="wire_form-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
+            </div>
+                </div>
+                    </div>
+                                   
+             <div class="col-sm-3 col-xs-12">
+                                <div class="form-group has-feedback "> 
+            <label class="control-label tolerance" for="form-wire-diameter-tol--">- Tolerance</label>
+            <div >
+              <input type="number" min="0" class="form-control " name="form-wire-diameter-tol--" id="form-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+            </div>                   
+                                    
+                                    
+                 </div>
+                    </div>  
+              <div class="col-sm-3 col-xs-12">
+                                <div class="form-group has-feedback "> 
+            <label class="control-label tolerance" for="form-wire-diameter-tol-+">+ Tolerance</label>
+            <div >
+              <input type="number" min="0" class="form-control " name="form-wire-diameter-tol-+" id="form-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+            </div>                   
+                                    
+                                    
+                 </div>
+                    </div>         
+        
+        </div>            
+             
+
+            <br>
+            <br>
+        <div class="row">
+            <label class="control-label col-md-2 col-sm-3" for="number">Custom Specifications:</label>
+            <div class="col-md-10 col-sm-9">
+                <textarea class="form-control" rows="4"  id="wire_form-custom-specifications" ></textarea>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button type="submit" id="wire-form-submit" class="btn btn-lg btn-default">Submit</button>
+            </div>
+          </div>
+        </form> 
+    </div>
+</div>    
+
+        
+   
+  </div>
+    </div>
+  
+
+<!-- Container (Pricing Section) -->
+<div id="quote" class="container-fluid bg-grey">
+  <div class="text-center">
+    <h2>Pricing</h2>
+    <h4>Request a free quote</h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading  slideanim">
+          <h1>Compression</h1>
+        </div>
+        <div class="panel-body  slideanim">
+          <p><strong>20</strong> Lorem</p>
+          <p><strong>15</strong> Ipsum</p>
+          <p><strong>5</strong> Dolor</p>
+          <p><strong>2</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer  slideanim">
+          <h3>$19</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg ">Sign Up</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading  slideanim">
+          <h1>Extension</h1>
+        </div>
+        <div class="panel-body  slideanim">
+          <p><strong>50</strong> Lorem</p>
+          <p><strong>25</strong> Ipsum</p>
+          <p><strong>10</strong> Dolor</p>
+          <p><strong>5</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer  slideanim">
+          <h3>$29</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg  ">Sign Up</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading  slideanim">
+          <h1>Torsion</h1>
+        </div>
+        <div class="panel-body  slideanim">
+          <p><strong>100</strong> Lorem</p>
+          <p><strong>50</strong> Ipsum</p>
+          <p><strong>25</strong> Dolor</p>
+          <p><strong>10</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer  slideanim">
+          <h3>$49</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg  ">Sign Up</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you as soon as possible.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Washington, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> 253-859-9499</p>
+      <p><span class="glyphicon glyphicon-print"></span> 253-859-0866</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> ladawna@soundspringinc.com</p>
+    </div>
+    <div class="col-sm-7 ">
+        <form id="contactForm" action="contact-receipt-success.php" method="post">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px;width:100%;"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(47.37284, -122.2380637);
+var mapProp = {center:myCenter, zoom:14, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGI5QTtzbYkO39GW2zXyOf-ws4wAcJVAk&callback=myMap"></script>
+
+
+<footer class="container-fluid text-center">
+    <br>
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+//ran on page load
+
+$(document).ready(
+function(){
+
+
+    $("#compressForm").bootstrapValidator(
+            
+        {
+            framework: 'bootstrap',
+        err: {
+            container: 'tooltip'
+        },
+        row: {
+            selector: 'span'
+        },
+            errorClass: "help-block",
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+            metric: {
+                validators:{
+                    row: '.col-xs-12',
+                    between:{ 
+                        min:0 ,
+                         message:'Please enter a positive value.'
+                        },
+                    notEmpty:{
+                        message:'Please enter a value.'
+                    }
+ 
+                }
+                
+            },
+        errorPlacement: function(error, element) {
+            if(element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        highlight: function(element) {
+            $(element).parent().is('.has-success, .has-error') ? 
+            $(element).parent().removeClass('has-success').addClass('has-error') :     
+            $(element).wrap('<span class="has-error"></span>');
+        },
+        unhighlight: function(element) {
+        $(element).parent().is('.has-success, .has-error') ? 
+        $(element).parent().removeClass('has-error').addClass('has-success') : 
+            $(element).wrap('<span class="has-success"></span>');
+        }
+            
+            
+        }
+    );
+     $("#extension-submit").click(
+        function()    
+        {
+            if(!validateText("extension-wire-diameter")) 
+                return false;
+            if(!validateText("extension-outer-diameter")) 
+                return false;
+            if(!validateText("extension-free-length")) 
+                return false;
+        }
+    );  
+    $("#torsion-submit").click(
+        function()    
+        {
+            if(!validateText("torsion-wire-diameter")) {
+                                return false;
+            }
+
+            if(!validateText("torsion-outer-diameter")) 
+            {
+                                return false;
+            }
+            if(!validateText("torsion-active-coils")) 
+            {
+                                return false;
+            }
+            if(!validateText("torsion-leg-length-1")) 
+            {
+                                return false;
+            }
+            if(!validateText("torsion-leg-length-2")) 
+            {
+                                return false;
+            }  
+        }
+    );   
+    
+    
+
+    
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top -49
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash-50;
+      });
+    } // End if
+  });
+    $(".navbar-header button").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    $(".navbar-header").click()
+  });
+$(window).scroll(function() {
+  $(".slideanim").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+
+    if (pos < winTop  + window.screen.height && pos  >   winTop  + window.screen.height * 0.5  ){
+
+                $(this).addClass("slide"); 
+        $(this).removeClass("slideanim");
+
+    }
+    else if(pos > winTop - $(this).height()  && pos < winTop + window.screen.height * 0.5    ){
+       $(this).addClass("reverseSlide");   
+        $(this).removeClass("slideanim");
+    }
+  });
+  $(".slide").each(function(){    
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+      if(pos > winTop  + window.screen.height  || pos < winTop  ){
+        $(this).removeClass("slide");   
+        $(this).addClass("slideanim");
+      }
+  });
+  $(".reverseSlide").each(function(){   
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+      if(pos > winTop  + window.screen.height +$(this).height() || pos < winTop - $(this).height()  ){
+        $(this).removeClass("reverseSlide");   
+        $(this).addClass("slideanim");
+      }
+  });    
+});
+    
+    
+
+$('#extensionEnds').on('click','li > a',function(){
+
+    var button = $(this);
+    
+    var hook1 =  $('#hook_lenth_1');
+    var hook2 =  $('#hook_lenth_2');
+   
+    if(button.attr('id')!='extn_hook')
+        {
+        hook1.css("display","none");
+        hook2.css("display","none");
+        }
+    else
+        {
+        hook1.css("display","block");
+        hook2.css("display","block");
+        }
+
+   
+});
+   
+    $(".slideanim").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+    if (pos < winTop  + window.screen.height&& pos > winTop-60) {
+      $(this).addClass("slide");  
+    }
+    
+  });
+  
+
+function validateText(id)
+{      
+
+    if($("#"+id).val()==null ||$("#"+id).val()=="" || $("#"+id).val()<0)
+    {
+
+        var div = $("#"+id).closest("div");
+        alert($div.attr("class"));
+        div.addClass("has-error")
+        return false;
+    } else {
+        var div = $("#"+id).closest("div");
+        div.removeClass("has-error")
+        return true;
+    }
+}
+    
+function getForm(){
+    var $id = $('ul.nav.nav-justified.nav-pills li.nav-item  a')
+    alert("Hello From "+$id);
+    
+    switch(id){
+        case "compressN":
+            return "compressForm";
+            break;
+        case "exteN":
+            return "extensionForm";
+            break;            
+        case "torsN":
+            return "torsionForm";
+            break;
+        case "wire_fN":
+            return "Wire_Form";
+            
+            break;
+           
+        default:
+            return "";
+            break;
+        };
+    
+    
+}
+ 
+    
+});
+
+
+
+
+</script>
+
+</body>
+</html>

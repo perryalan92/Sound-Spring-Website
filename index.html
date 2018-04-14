@@ -28,21 +28,22 @@
       margin: 0;
   }
       .btn{
-      margin: 15px 0;
+      border-color: #337AB7;
       background-color: #ADC1FB;
       color: #fff;
-          text-decoration-color: #fff;
-      }
+    }
           .btn:hover{
-      margin: 15px 0;
       background-color: #ADC1FB;
       color: #fff;
-          text-decoration-color: #fff;
+      }
+     .btn:active{
+      background-color: #ADC1FB;
+      color: #fff;
       }
 .has-error .control-label,
 .has-error .help-block,
 .has-error .form-control-feedback {
-    color: #red;
+    color: red;
 }
 
 .has-success .control-label,
@@ -71,7 +72,7 @@
       font-family: system-ui, sans-serif;
       }  
   .jumbotron p {
-      color: #0B40D0;
+      color: #337AB7;
       font-family:  system-ui, sans-serif;
   }
 
@@ -215,22 +216,49 @@
       border-radius: 5;
       font-family: Montserrat, sans-serif;
   }
-  .navbar li a, .navbar .navbar-brand {
-      color: #ADC1FB !important;
-  }
-    .navbar-nav li a,{
-    color: #ADC1FB !important;
-      background-color: #fff !important;     
-    }
-   .navbar-nav li.active a   {
-      color: #fff !important;
-      background-color: #ADC1FB !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
 
+   .navbar .navbar-brand {
+      color: #ADC1FB !important;
+
+  }
+    #myNavTabs li a{
+                color: #ADC1FB!important;
+        background-color: #fff!important; 
+
+    }
+   #myNavTabs li a:hover,
+    #myNavTabs  >.active>a
+    { 
+        color: #fff!important;
+        background-color: #ADC1FB!important; 
+    }
+
+        #calculatorTabs.nav li a  {
+      border-color: #337AB7;
+      background-color: #ADC1FB;
+      color: #fff;
+        border-style: solid;
+            border-width: thin;
+  }
+    #calculatorTabs li a:hover{
+        color: #fff;
+        background-color: #337AB7;
+    }
+    #calculatorTabs  > .active a{
+        color: #fff;
+        background-color: #337AB7;
+    }
+    .formLinks li a{
+              border-color: #337AB7;
+      background-color: #ADC1FB;
+      color: #fff;
+        border-style: solid;
+            border-width: thin;
+    }
+    .formLinks li a:hover{
+        color: #fff!important;
+        background-color: #337AB7!important;
+    }
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -313,7 +341,7 @@ visibility:visible;
       display: block;
   }
   .navbar-toggle .span {
-      display: none;
+      display: inline;
   }
   .navbar-collapse {
       border-top: 1px solid transparent;
@@ -384,7 +412,7 @@ visibility:visible;
       <a class=" navbar-brand glyphicon glyphicon-link " href="#myPage">ound</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul id="myNavTabs"class="nav navbar-nav navbar-right">
         <li><a href="#about"><strong>ABOUT</strong></a></li>
         <li><a href="#portfolio"><strong>PORTFOLIO</strong></a></li>
         <li><a href="#calculator"><strong>CALCULATOR</strong></a></li>
@@ -665,23 +693,44 @@ $(document).on('click','.navbar-collapse.in',function(e) {
     <h2>Spring Calculator</h2>
     <h4>Make a spring</h4>
       
-      <ul class="nav nav-justified nav-pills" id="calculatorTabs" role="tablist" name="calculatorTabs" >
-            <li class="nav-item "><a class=" btn-primary btn-lg btn " id="compressN" type="button" role="button"  data-toggle="tab" href="#Compression" value="Compression" name="listButtton"><strong>Compression</strong></a></li>
-            <li class="nav-item"><a id="exteN" class="btn btn-lg  btn-primary" type="button" role="button" data-toggle="tab"  href="#Extension" value="Extension" name="listButtton"><strong>Extension</strong></a></li>
-            <li class="nav-item"> <a class="  btn-primary btn-lg  btn  " id="torsN" type="button" role="button" data-toggle="tab" href="#Torsion" value="Torsion" name="listButtton"><strong>Torsion</strong></a></li>
-            <li class="nav-item"><a class=" btn-primary btn-lg  btn  " type="button" role="button" id="wire_fN" data-toggle="tab" href="#Wire_Form" value="Wire Forms" name="listButtton"><strong>Wire Forms</strong></a>
+      <ul class=" nav nav-justified nav-pills " id="calculatorTabs" role="tablist" name="calculatorTabs" >
+            <li class="nav-item "><a id="compressN" class="btn-lg" type="button" role="button"  data-toggle="tab" href="#Compression" value="0" name="listButtton"><strong>Compression</strong></a></li>
+            <li class="nav-item"><a id="exteN"  class="btn-lg"  type="button" role="button" data-toggle="tab"  href="#Extension" value="1" name="listButtton"><strong>Extension</strong></a></li>
+            <li class="nav-item"> <a id="torsN"  class="btn-lg" type="button" role="button" data-toggle="tab" href="#Torsion" value="2" name="listButtton"><strong>Torsion</strong></a></li>
+            <li class="nav-item"><a  type="button" class="btn-lg"  role="button" id="wire_fN" data-toggle="tab" href="#Wire_Form" value="3" name="listButtton"><strong>Wire Forms</strong></a>
             </li>
       </ul>
+              
     
-   
-
-        <br>  <span class="text-center">Measurements in mm</span> <br>
   <!-- Tab panes -->
   <div class="tab-content">
 
         <div role="tabpanel" class="tab-pane  fade" id="Compression">
         <form class="block-form block-form-default needs-validation" id="compressForm" role="form" >
-     <div class="row">
+            <div class="row">
+            <div class="col-xs-3">
+                </div>
+            <div class="col-xs-6">
+            <div class="form-group has-feedback "> 
+             <label class="control-label form-control-static text-right" for="compressionUnits">Units:</label>   
+            
+              <ul class="nav nav-pills nav-justified formLinks" role="group" id="compressionUnits" role="tablist" name="compressionUnits" data-toggle="buttons">
+                  <li class="nav-item ">
+                      <a class=" btn required" id="unitInches" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Inches</strong></a></li>
+                    <li class="nav-item active">
+                      <a class=" btn required" id="unitMillimeters" type="button" type="radio" name="options" data-toggle="tab" value="1"><strong>Milimeters</strong></a>
+                  </li>
+                  
+                </ul>
+                
+                </div>
+                </div>
+                <div class="col-xs-3">
+                </div>
+            </div>
+            
+            
+            <div class="row">
          
         <div class="col-xs-12">
             <div class="form-group has-feedback "> 
@@ -689,11 +738,11 @@ $(document).on('click','.navbar-collapse.in',function(e) {
             
        
             <div> 
-              <ul class="nav nav-justified nav-pills" role="group" id="compressEnds" role="tablist" name="compressEnds" data-toggle="buttons">
-                    <li class="nav-item "><a class=" btn-primary btn " id="compress-button-0" type="radio" name="options" data-toggle="tab" value="0"><strong>Closed and Square</strong></a></li>
-                    <li class="nav-item"><a id="compress-button-1" class=" btn-primary  btn " type="radio" name="options" role="button" data-toggle="tab" value="1"><strong>Closed and Ground</strong></a></li>
-                    <li class="nav-item"> <a class="  btn-primary  btn  " id="compress-button-2" type="radio" name="options" role="button" data-toggle="tab"  value="2"><strong>Double Closed</strong></a></li>
-                    <li class="nav-item"><a class=" btn-primary  btn  " type="button" type="radio" name="options" id="compress-button-3" data-toggle="tab" value="3"><strong>Open Ends</strong></a>
+              <ul class="nav nav-justified nav-pills formLinks required" role="group" id="compressEnds" role="tablist" name="compressEnds" data-toggle="buttons">
+                    <li class="nav-item active"><a class=" btn " id="compress-button-0" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Closed and Square</strong></a></li>
+                    <li class="nav-item"><a id="compress-button-1" class="  btn " type="button" type="radio" name="options" role="button" data-toggle="tab" value="1"><strong>Closed and Ground</strong></a></li>
+                    <li class="nav-item"> <a class="  btn  " id="compress-button-2" type="button" type="radio" name="options" role="button" data-toggle="tab"  value="2"><strong>Double Closed</strong></a></li>
+                    <li class="nav-item"><a class=" btn  " type="button" type="radio" name="options" id="compress-button-3" data-toggle="tab" value="3"><strong>Open Ends</strong></a>
                     </li>
               </ul>
 
@@ -706,18 +755,19 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">
               <label class="control-label required" for="compression-wire-type">Type of Wire:</label>
               
-              <select class="form-control custom-select" id="compression-wire-type" name="compression-wire-type">
-                  <option value="A228">Music Wire</option>
+              <select class="form-control custom-select" id="compression-wire-type" name="compression_wire_type" class="required">
+                  <option value="">Please choose a material</option>
+                  <option value="79.3">Music Wire</option>
 
-                  <option value="A229">Chrome Vanadium</option>
+                  <option value="79.3">Chrome Vanadium</option>
 
-                  <option value="A230">Chrome Silicon</option>
+                  <option value="79.3">Chrome Silicon</option>
 
-                  <option value="A227">Stainless Steel Wire: Austenitic Type 302</option>
+                  <option value="69">Stainless Steel Wire: Austenitic Type 302</option>
 
-                  <option value="A313_17">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+                  <option value="75.8">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
 
-                  <option value="A313_302">Inconel Alloy X750</option>
+                  <option value="79.3">Inconel Alloy X750</option>
 
               </select>
               
@@ -740,7 +790,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">
                    <label class="control-label" for="compression-wire-diameter">Wire Diameter:</label>
                     <div>
-                   <span><input type="number" min="0" class="form-control" name="WireD" id="compression-wire-diameter" placeholder="Enter wire diameter"  step="0.1" ></span>
+                   <span><input type="number" min="0" class="form-control has-feedback index freelength"  name="WireD" id="compression-wire-diameter" placeholder="Enter wire diameter"  step="0.001" required></span>
                     <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -752,7 +802,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                     <label class="control-label tolerance" for="compression-wire-diameter-tol--" >- Tolerance</label>
 
                     <div>
-                    <span><input type="number" min="0" class=" form-control has-feedback" name="Wire_D" id="compression-wire-diameter-tol--" placeholder="- Tolerance" step="0.1" data-error-msg="Wire diameter must be greater than 0."></span>
+                    <span><input type="number" min="0" class=" form-control has-feedback" name="Wire_D" id="compression-wire-diameter-tol--" placeholder="- Tolerance" step="0.001" data-error-msg="Wire diameter must be greater than 0."></span>
                     </div>
                     <div class="help-block with-errors"></div>
 
@@ -762,7 +812,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                     <div class="form-group">
                     <label class="control-label tolerance" for="compression-wire-diameter-tol-+">+ Tolerance</label>
                         <div>
-                            <span><input type="number" min="0" class="form-control has-feedback" name="WireDp" id="compression-wire-diameter-tol-+" placeholder="- Tolerance" step="0.1" data-error-msg="Wire diameter must be greater than 0." required></span>
+                            <span><input type="number" min="0" class="form-control has-feedback" name="WireDp" id="compression-wire-diameter-tol-+" placeholder="- Tolerance" step="0.001" data-error-msg="Wire diameter must be greater than 0." required></span>
                         </div>
                         <div class="help-block with-errors"></div>
                     </div>
@@ -773,7 +823,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">      
             <label class="control-label" for="compression-outer-diameter">Outer Diameter:</label>
             <div>
-                <span><input type="number" class="form-control" name="OuterD" id="compression-outer-diameter" placeholder="Enter outer Diameter" step="0.1" 
+                <span><input type="number" class="form-control has-feedback index"  name="OuterD" id="compression-outer-diameter" placeholder="Enter outer Diameter" step="0.001" required
                              ></span>
             </div>
                     <div class="help-block with-errors"></div>
@@ -783,7 +833,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">                 
                     <label class="control-label tolerance" for="compression-outer-diameter-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="Outer_D" id="compression-outer-diameter-tol--" placeholder="- Tolerance" data-error-msg="Wire diameter must be greater than 0." step="0.1" required></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="Outer_D" id="compression-outer-diameter-tol--" placeholder="- Tolerance" data-error-msg="Wire diameter must be greater than 0." step="0.001" required></span>
                     </div>
                     <div class="help-block with-errors"></div>
                 </div>
@@ -792,7 +842,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">   
                     <label class="control-label tolerance" for="compression-outer-diameter-tol-+">+ Tolerance</label>
              <div>
-                <span><input type="number" min="0" class="form-control has-feedback" name="OuterDp" id="compression-outer-diameter-tol-+" placeholder="+ Tolerance" step="0.1" data-error-msg="Wire diameter must be greater than 0."  required></span>
+                <span><input type="number" min="0" class="form-control has-feedback" name="OuterDp" id="compression-outer-diameter-tol-+" placeholder="+ Tolerance" step="0.001" data-error-msg="Wire diameter must be greater than 0."  required></span>
             </div>
                     <div class="help-block with-errors"></div>
              </div>
@@ -803,7 +853,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                         <div class="form-group">  
                             <label class="control-label" for="compression-free-length">Free Length:</label>
                             <div>
-                                <span><input type="number" class="form-control has-feedback" name="FreeL" id="compression-free-length" placeholder="Enter free length" step="0.1" data-error-msg="Outer diameter must be greater than 0."  required></span>
+                                <span><input type="number" class="form-control has-feedback freelength" name="FreeL" id="compression-free-length" placeholder="Enter free length" step="0.001" data-error-msg="Outer diameter must be greater than 0."  required></span>
                             </div>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -812,7 +862,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                         <div class="form-group">  
                             <label class="control-label tolerance" for="compression-free-length-tol--">- Tolerance</label>
                             <div>
-                                <span><input type="number" min="0" class="form-control has-feedback" name="Free_L"  id="compression-free-length-tol--" placeholder="- Tolerance" step="0.1" data-error-msg="Wire diameter must be greater than 0."></span>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="Free_L"  id="compression-free-length-tol--" placeholder="- Tolerance" step="0.001" data-error-msg="Wire diameter must be greater than 0."></span>
                             </div>  
                             <div class="help-block with-errors"></div>
                         </div>
@@ -821,7 +871,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                         <div class="form-group">  
                             <label class="control-label tolerance" for="compression-free-length-tol-+">+ Tolerance</label>
                             <div>
-                                <span><input type="number" min="0" class="form-control has-feedback" name="FreeLp" id="compression-free-length-tol-+" placeholder="+ Tolerance" data-error-msg="Free length must be greater than 0." step="0.1" required></span>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="FreeLp" id="compression-free-length-tol-+" placeholder="+ Tolerance" data-error-msg="Free length must be greater than 0." step="0.001" required></span>
                             </div> 
                             <div class="help-block with-errors"></div>
                         </div>
@@ -832,9 +882,9 @@ $(document).on('click','.navbar-collapse.in',function(e) {
             <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <div class="form-group">                    
-                            <label class="control-label " for="compression-active-coils">Compressable Coils:</label>
+                            <label class="control-label  has-feedback" for="compression-active-coils">Compressable Coils:</label>
                             <div>
-                                <span><input type="number" class="form-control has-feedback" name="ActiveC" id="compression-active-coils" placeholder="Enter compressable coils" data-error-msg="Outer diameter must be greater than 0." step="0.1" required ></span>
+                                <span><input type="number" class="form-control has-feedback freelength" name="ActiveC" id="compression-active-coils" placeholder="Enter compressable coils" data-error-msg="Outer diameter must be greater than 0." step="0.001" required ></span>
                             </div>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -844,7 +894,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                                 <label class="control-label tolerance  has-feedback" for="compression-active-coils-tol--">- Tolerance</label>
                                 <div >
                                     <span>
-                                        <input type="number" min="0" class="form-control " name="Active_C" id="compression-active-coils-tol--" placeholder="- Tolerance" data-error-msg="Tolerance must be greater than 0." step="0.1" required>
+                                        <input type="number" min="0" class="form-control " name="Active_C" id="compression-active-coils-tol--" placeholder="- Tolerance" data-error-msg="Tolerance must be greater than 0." step="0.001" required>
                                     </span>
                                 </div>
                                 <div class="help-block with-errors"></div>
@@ -854,14 +904,18 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                         <div class="form-group">                    
                             <label class="control-label tolerance " for="compression-active-coils-tol-+">+ Tolerance</label>
                             <div>
-                                <span><input type="number" min="0" class="form-control has-feedback" name="ActiveCp" id="compression-active-coils-tol-+" placeholder="+ Tolerance" data-error-msg="Tolerance must be greater than 0." step="0.1" required></span>
+                                <span><input type="number" min="0" class="form-control has-feedback" name="ActiveCp" sid="compression-active-coils-tol-+" placeholder="+ Tolerance" data-error-msg="Tolerance must be greater than 0." step="0.001" required></span>
                             </div>  
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
                     
                     </div>
-         
+          <div class="row">
+           <div class="col-sm-12">
+              <div id='ErrorLocation'></div>
+            </div>
+        </div>
             
            <div class="row">
                
@@ -876,20 +930,87 @@ $(document).on('click','.navbar-collapse.in',function(e) {
             </div>
       
     </form>
+    <form class="block-form block-form-default needs-validation" id="compressForm" role="form" >
+
+    
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                   <label class="control-label" for="compression-maximum-compression-field">Maximum Undamaged Compression:</label>
+                    <div>
+                        <span><p type="number" min="0" class="form-control has-feedback"  name="compression-rate-field" id="compression-maximum-compression-field" placeholder="Waiting for demensions"  step="0.001">Waiting for demensions.</p></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                   <label class="control-label" for="compression-index-field">Index:</label>
+                    <div>
+                   <span><p type="number" min="0" class="form-control has-feedback"  name="compression-index-field" id="compression-index-field" placeholder="Waiting for demensions"  step="0.001" style="color: black">Waiting for demensions.
+                       </p></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                   <label class="control-label" for="compression-rate-field">Rate:</label>
+                    <div>
+                        <span><p type="number" min="0" class="form-control has-feedback"  name="compression-rate-field" id="compression-rate-field" placeholder="Waiting for demensions"  step="0.001">Waiting for demensions.</p></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                   <label class="control-label" for="compression-index-field">Index:</label>
+                    <div>
+                   <span><p type="number" min="0" class="form-control has-feedback"  name="compression-index-field" id="compression-index-field" placeholder="Waiting for demensions"  step="0.001" style="color: black">Waiting for demensions.
+                       </p></span>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+    </form>
       </div>
     <div role="tabpanel" class="tab-pane  fade" id="Extension">
     <form class="block-form block-form-default needs-validation" id="extensionForm" novalidate>
+                    <div class="row">
+            <div class="col-xs-3">
+                </div>
+            <div class="col-xs-6">
+            <div class="form-group has-feedback "> 
+             <label class="control-label form-control-static text-right" for="extensionUnits">Units:</label>   
+            
+              <ul class="nav nav-pills nav-justified unitLinks required" role="group" id="extensionUnits" role="tablist" name="extensionUnits" data-toggle="buttons">
+                  <li class="nav-item ">
+                      <a class=" btn required" id="unitInches" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Inches</strong></a></li>
+                    <li class="nav-item  active">
+                      <a class=" btn required" id="unitMillimeters" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Milimeters</strong></a>
+                  </li>
+                  
+                </ul>
+                
+                </div>
+                </div>
+                <div class="col-xs-3">
+                </div>
+            </div>
         <div class="row">
          
             <div class="col-xs-12">
                 <div class="form-group has-feedback "> 
                 <label class="control-label form-control-static text-right" for="extensionEnds">Type of Ends:</label>
                     <div> 
-              <ul class="nav nav-justified nav-pills" role="group" id="extensionEnds" role="tablist" name="extensionEnds" data-toggle="buttons">
-                    <li class="nav-item "><a class=" btn-primary btn " id="extension-button-0" type="radio" name="extension-button-0" data-toggle="tab" value="Compression"><strong>Machine Hooks</strong></a></li>
-                    <li class="nav-item"><a id="extension-button-1" class=" btn-primary  btn " type="radio" name="extension-button-1" role="button" data-toggle="tab"  value="Extension"><strong>Cross Over Center Hooks</strong></a></li>
-                    <li class="nav-item"> <a class="  btn-primary  btn  " id="extension-button-2" type="radio" name="extension-button-2" role="button" data-toggle="tab"  value="Torsion"><strong>Side Hooks/Loops</strong></a></li>
-                    <li class="nav-item"><a class=" btn-primary  btn  " type="radio" name="extension-button-3" id="extn_hook" data-toggle="tab" value="Wire Forms"><strong>Extended Hooks</strong></a>
+              <ul class="nav nav-justified nav-pills formLinks" role="group" id="extensionEnds" role="tablist" name="extensionEnds" data-toggle="buttons">
+                    <li class="nav-item "><a class="btn " id="extension-button-0" type="button" type="radio" name="extension-button-0" data-toggle="tab" value="Compression"><strong>Machine Hooks</strong></a></li>
+                    <li class="nav-item"><a id="extension-button-1" class="btn " type="button" type="radio" name="extension-button-1" role="button" data-toggle="tab"  value="Extension"><strong>Cross Over Center Hooks</strong></a></li>
+                    <li class="nav-item"> <a class="  btn  " id="extension-button-2" type="button" type="radio" name="extension-button-2" role="button" data-toggle="tab"  value="Torsion"><strong>Side Hooks/Loops</strong></a></li>
+                    <li class="nav-item"><a class=" btn  " type="button" type="radio" name="extension-button-3" id="extn_hook" data-toggle="tab" value="Wire Forms"><strong>Extended Hooks</strong></a>
                     </li>
               </ul>
 
@@ -902,18 +1023,20 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">
               <label class="control-label required" for="extension-wire-type">Type of Wire:</label>
               
-              <select class="form-control custom-select" id="extension-wire-type" name="extension-wire-type">
-                  <option value="A228">Music Wire</option>
+              <select class="form-control custom-select" id="extension-wire-type" name="extension-wire-type" class="required">
+                                    <option value="">Please choose a material</option>
 
-                  <option value="A229">Chrome Vanadium</option>
+                  <option value="79.3">Music Wire</option>
 
-                  <option value="A230">Chrome Silicon</option>
+                  <option value="79.3">Chrome Vanadium</option>
 
-                  <option value="A227">Stainless Steel Wire: Austenitic Type 302</option>
+                  <option value="79.3">Chrome Silicon</option>
 
-                  <option value="A313_17">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+                  <option value="69">Stainless Steel Wire: Austenitic Type 302</option>
 
-                  <option value="A313_302">Inconel Alloy X750</option>
+                  <option value="75.8">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+
+                  <option value="79.3">Inconel Alloy X750</option>
 
               </select>
               
@@ -938,7 +1061,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="extension-wire-diameter">Wire Diameter:</label>
                     <div>
-                      <span><input type="number" min="0" class="form-control " name="eWireD" step="0.1" id="extension-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0."></span>
+                      <span><input type="number" min="0" class="form-control " name="eWireD" step="0.001" id="extension-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0."></span>
                     </div>
                     <div class="help-block with-errors"></div>
                 </div>
@@ -948,7 +1071,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-wire-diameter-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eWire_D" id="extension-wire-diameter-tol--" step="0.1" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eWire_D" id="extension-wire-diameter-tol--" step="0.001" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
                     </div>    
             <div class="help-block with-errors"></div>
                 </div>
@@ -957,7 +1080,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-wire-diameter-tol-+">+ Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eWireDp" id="extension-wire-diameter-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eWireDp" id="extension-wire-diameter-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0."></span>
                     </div>  
             <div class="help-block with-errors"></div>
                 </div>
@@ -968,7 +1091,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="number">Outer Diameter:</label>
                     <div>
-                        <span><input type="number" class="form-control " name="eOuterD" id="extension-outer-diameter" placeholder="Enter outer diameter." step="0.1" data-error="Outer diameter must be greater than 0." ></span>
+                        <span><input type="number" class="form-control " name="eOuterD" id="extension-outer-diameter" placeholder="Enter outer diameter." step="0.001" data-error="Outer diameter must be greater than 0." ></span>
                     </div>
                     <div class="help-block with-errors"></div>
                 </div>
@@ -978,7 +1101,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-wire-diameter-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback " name="eOuter_D" id="extension-outer-diameter-tol--" step="0.1" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback " name="eOuter_D" id="extension-outer-diameter-tol--" step="0.001" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0."></span>
                     </div>   
             <div class="help-block with-errors"></div>
                 </div>
@@ -987,7 +1110,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-outer-diameter-tol-+">+ Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eOuterDp" id="extension-outer-diameter-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eOuterDp" id="extension-outer-diameter-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0."></span>
                     </div>    
             <div class="help-block with-errors"></div>
                 </div>
@@ -999,7 +1122,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="number">Length Between Inside Of Hooks:</label>
                     <div>
-                        <span><input type="number" class="form-control has-feedback" name="eFreeLH" id="extension-free-length" placeholder="Enter length between inside hooks." step="0.1" data-error="Length must be greater than 0." ></span>
+                        <span><input type="number" class="form-control has-feedback" name="eFreeLH" id="extension-free-length" placeholder="Enter length between inside hooks." step="0.001" data-error="Length must be greater than 0." ></span>
                     </div>
                     <div class="help-block with-errors"></div>
                 </div>
@@ -1009,7 +1132,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-free-length-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control  has-feedback" name="eFree_LH" id="extension-free-length-tol--" step="0.1" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control  has-feedback" name="eFree_LH" id="extension-free-length-tol--" step="0.001" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
                     </div>  
             <div class="help-block with-errors"></div>
                 </div>
@@ -1018,7 +1141,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-free-length-tol-+">+ Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eFreeLHp" id="extension-free-length-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Length must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eFreeLHp" id="extension-free-length-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Length must be greater than 0."></span>
                     </div>    
             <div class="help-block with-errors"></div>
                 </div>
@@ -1029,7 +1152,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">
                     <label class="control-label" for="number" >Hook Length 1:</label>
                     <div >
-                        <span><input type="number" class="form-control has-feedback" name="eHookL" id="extension-hook-length-1" placeholder="Enter length of hook length 1." step="0.1" data-error="Hook Length must be greater than 0." ></span>
+                        <span><input type="number" class="form-control has-feedback" name="eHookL" id="extension-hook-length-1" placeholder="Enter length of hook length 1." step="0.001" data-error="Hook Length must be greater than 0." ></span>
                     </div>
                     <div class="help-block with-errors"></div>
                 </div>
@@ -1039,7 +1162,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-hook-length-1-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback " name="eHook_L" id="extension-hook-length-1-tol--" step="0.1" placeholder="- Tolerance" data-error="Tolerance must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback " name="eHook_L" id="extension-hook-length-1-tol--" step="0.001" placeholder="- Tolerance" data-error="Tolerance must be greater than 0."></span>
                     </div> 
             <div class="help-block with-errors"></div>
                 </div>
@@ -1048,7 +1171,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="extension-hook-length-1-tol-+">+ Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eHookLp" id="extension-hook-length-1-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eHookLp" id="extension-hook-length-1-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0."></span>
                     </div>     
             <div class="help-block with-errors"></div>
                 </div>
@@ -1060,7 +1183,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
             
                 <label class="control-label" for="number" >Hook Length 2:</label>
                 <div>
-                    <span><input type="number" class="form-control has-feedback" name="eHookL2" id="extension-hook-length-2" placeholder="Enter length of hook length 2." step="0.1" ></span>
+                    <span><input type="number" class="form-control has-feedback" name="eHookL2" id="extension-hook-length-2" placeholder="Enter length of hook length 2." step="0.001" ></span>
                 </div>
                 <div class="help-block with-errors"></div>
                 </div>
@@ -1070,7 +1193,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                      <label class="control-label tolerance" for="extension-hook-length-2-tol--">- Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback " name="eHook_L2" step="0.1" id="extension-hook-length-2-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback " name="eHook_L2" step="0.001" id="extension-hook-length-2-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0."></span>
                     </div> 
             <div class="help-block with-errors"></div>
                 </div>
@@ -1079,13 +1202,17 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                      <label class="control-label tolerance" for="extension-hook-length-2-tol-+">+ Tolerance</label>
                     <div>
-                        <span><input type="number" min="0" class="form-control has-feedback" name="eHookLp2" id="extension-hook-length-2-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0."></span>
+                        <span><input type="number" min="0" class="form-control has-feedback" name="eHookLp2" id="extension-hook-length-2-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Tolerance must be greater than 0."></span>
                     </div>      
 <div class="help-block with-errors"></div>
                 </div>
             </div>
                
-                
+                <div class="row">
+           <div class="col-sm-12">
+              <div id='ErrorLocation'></div>
+            </div>
+        </div>          
 
       
           <div class="form-group">
@@ -1100,15 +1227,36 @@ $(document).on('click','.navbar-collapse.in',function(e) {
       
     <div role="tabpanel" class="tab-pane  fade" id="Torsion">
      <form class="block-form block-form-default needs-validation" id="torsionForm" novalidate>
+         <div class="row">
+            <div class="col-xs-3">
+                </div>
+            <div class="col-xs-6">
+            <div class="form-group has-feedback "> 
+             <label class="control-label form-control-static text-right" for="torsionUnits">Units:</label>   
+            
+              <ul class="nav nav-pills nav-justified unitLinks required" role="group" id="torsionUnits" role="tablist" name="torsionUnits" data-toggle="buttons">
+                  <li class="nav-item ">
+                      <a class=" btn required" id="unitInches" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Inches</strong></a></li>
+                    <li class="nav-item active">
+                      <a class=" btn required" id="unitMillimeters" type="button" type="radio" name="options" data-toggle="tab" value="0"><strong>Milimeters</strong></a>
+                  </li>
+                  
+                </ul>
+                
+                </div>
+                </div>
+                <div class="col-xs-3">
+                </div>
+            </div>
         <div class="row">
          
             <div class="col-xs-12">
                 <div class="form-group has-feedback "> 
                 <label class="control-label form-control-static text-right" for="torsionEnds">Direction of rotation:</label>
                     <div> 
-              <ul class="nav nav-justified nav-pills" role="group" id="torsionEnds" role="tablist" name="torsionEnds" data-toggle="buttons">
-                    <li class="nav-item "><a class=" btn  btn-primary" id="torsion-button-0" type="radio" name="torsion-button-0" data-toggle="tab" value="Torsion"><strong>Left Hand</strong></a></li>
-                    <li class="nav-item"><a id="torsion-button-1" class=" btn btn-primary " type="radio" name="torsion-button-1" role="button" data-toggle="tab"  value="Torsion"><strong>Right Hand</strong></a></li>
+              <ul class="nav nav-justified nav-pills formLinks" role="group" id="torsionEnds" role="tablist" name="torsionEnds" data-toggle="buttons">
+                    <li class="nav-item "><a class=" btn" id="torsion-button-0" type="button" type="radio" name="torsion-button-0" data-toggle="tab" value="Torsion"><strong>Left Hand</strong></a></li>
+                    <li class="nav-item"><a id="torsion-button-1" class=" btn " type="button" type="radio" name="torsion-button-1" role="button" data-toggle="tab"  value="Torsion"><strong>Right Hand</strong></a></li>
               </ul>
 
                     </div>
@@ -1120,18 +1268,20 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group">
               <label class="control-label required" for="torsion-wire-type">Type of Wire:</label>
               
-              <select class="form-control custom-select" id="torsion-wire-type" name="torsion-wire-type">
-                  <option value="A228">Music Wire</option>
+              <select class="form-control custom-select" id="torsion-wire-type" name="torsion-wire-type" class="required">
+                                    <option value="">Please choose a material</option>
 
-                  <option value="A229">Chrome Vanadium</option>
+                  <option value="79.3">Music Wire</option>
 
-                  <option value="A230">Chrome Silicon</option>
+                  <option value="79.3">Chrome Vanadium</option>
 
-                  <option value="A227">Stainless Steel Wire: Austenitic Type 302</option>
+                  <option value="79.3">Chrome Silicon</option>
 
-                  <option value="A313_17">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+                  <option value="69">Stainless Steel Wire: Austenitic Type 302</option>
 
-                  <option value="A313_302">Inconel Alloy X750</option>
+                  <option value="75.8">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+
+                  <option value="79.3">Inconel Alloy X750</option>
 
               </select>
               </div>
@@ -1154,7 +1304,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="torsion-wire-diameter">Wire Diameter:</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control " name="torsion-wire-diameter" id="torsion-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control " name="torsion-wire-diameter" id="torsion-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
                     </div>
                 </div>
             </div>
@@ -1163,7 +1313,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-wire-diameter-tol--">- Tolerance</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control  form-group has-feedback" name="torsion-wire-diameter-tol--" id="torsion-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control  form-group has-feedback" name="torsion-wire-diameter-tol--" id="torsion-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
                     </div>    
             
                 </div>
@@ -1172,7 +1322,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-wire-diameter-tol-+">+ Tolerance</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control form-group has-feedback" name="torsion-wire-diameter-tol-+" id="torsion-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control form-group has-feedback" name="torsion-wire-diameter-tol-+" id="torsion-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
                     </div>  
             
                 </div>
@@ -1183,7 +1333,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="number">Outer Diameter:</label>
                     <div>
-                     <input type="number" step="0.1" class="form-control" name="torsion-outer-diameter" id="torsion-outer-diameter" placeholder="Enter outer Diameter." data-error="Outer diameter must be greater than 0." >
+                     <input type="number" step="0.001" class="form-control" name="torsion-outer-diameter" id="torsion-outer-diameter" placeholder="Enter outer Diameter." data-error="Outer diameter must be greater than 0." >
                     </div>
                 </div>
             </div>
@@ -1192,7 +1342,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-wire-diameter-tol--">- Tolerance</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control " name="torsion-outer-diameter-tol--" id="torsion-outer-diameter-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control " name="torsion-outer-diameter-tol--" id="torsion-outer-diameter-tol--" placeholder="- Tolerance" data-error="Outer diameter must be greater than 0.">
                     </div>   
             
                 </div>
@@ -1201,7 +1351,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-outer-diameter-tol-+">+ Tolerance</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control" name="torsion-outer-diameter-tol-+" id="torsion-outer-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control" name="torsion-outer-diameter-tol-+" id="torsion-outer-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
                     </div>    
             
                 </div>
@@ -1212,7 +1362,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="number">Number of Active Coils:</label>
                     <div>
-                     <input type="number" class="form-control" step="0.1" name="torsion-active-coils" id="torsion-active-coils" placeholder="Enter number of active coils." data-error="Outer diameter must be greater than 0." >
+                     <input type="number" class="form-control" step="0.001" name="torsion-active-coils" id="torsion-active-coils" placeholder="Enter number of active coils." data-error="Outer diameter must be greater than 0." >
                     </div>
                 </div>
             </div>
@@ -1230,7 +1380,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-active-coils-tol-+">+ Tolerance</label>
                     <div>
-                      <input type="number" step="0.1" min="0" class="form-control" name="torsion-active-coils-tol-+" id="torsion-active-coils-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" step="0.001" min="0" class="form-control" name="torsion-active-coils-tol-+" id="torsion-active-coils-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
                     </div>    
             
                 </div>
@@ -1241,7 +1391,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="torsion-leg-length-1">Length Of Leg 1:</label>
                     <div>
-                     <input type="number" class="form-control" name="torsion-leg-length-1" id="torsion-leg-length-1" step="0.1" placeholder="Enter length of leg 1." data-error="Outer diameter must be greater than 0." >
+                     <input type="number" class="form-control" name="torsion-leg-length-1" id="torsion-leg-length-1" step="0.001" placeholder="Enter length of leg 1." data-error="Outer diameter must be greater than 0." >
                     </div>
                 </div>
             </div>
@@ -1250,7 +1400,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-leg-length-1-tol--">- Tolerance</label>
                     <div>
-                      <input type="number" min="0" class="form-control " name="torsion-leg-length-1-tol--" id="torsion-leg-length-1-tol--" placeholder="- Tolerance" step="0.1" data-error="Outer diameter must be greater than 0.">
+                      <input type="number" min="0" class="form-control " name="torsion-leg-length-1-tol--" id="torsion-leg-length-1-tol--" placeholder="- Tolerance" step="0.001" data-error="Outer diameter must be greater than 0.">
                     </div>   
             
                 </div>
@@ -1259,7 +1409,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-leg-length-1-tol-+">+ Tolerance</label>
                     <div>
-                      <input type="number" min="0" class="form-control" name="torsion-leg-length-1-tol-+" id="torsion-leg-length-1-tol-+" placeholder="+ Tolerance" step="0.1" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" min="0" class="form-control" name="torsion-leg-length-1-tol-+" id="torsion-leg-length-1-tol-+" placeholder="+ Tolerance" step="0.001" data-error="Wire diameter must be greater than 0.">
                     </div>    
             
                 </div>
@@ -1270,7 +1420,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label" for="torsion-leg-length-2">Length Of Leg 2:</label>
                     <div>
-                     <input type="number" class="form-control" name="torsion-leg-length-2" id="torsion-leg-length-2" placeholder="Enter length of leg 2." step="0.1" data-error="Outer diameter must be greater than 0." >
+                     <input type="number" class="form-control" name="torsion-leg-length-2" id="torsion-leg-length-2" placeholder="Enter length of leg 2." step="0.001" data-error="Outer diameter must be greater than 0." >
                     </div>
                 </div>
             </div>
@@ -1279,7 +1429,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-leg-length-2-tol--">- Tolerance</label>
                     <div>
-                      <input type="number" min="0" class="form-control " name="torsion-leg-length-2-tol--" id="torsion-leg-length-2-tol--" placeholder="- Tolerance" step="0.1" data-error="Outer diameter must be greater than 0.">
+                      <input type="number" min="0" class="form-control " name="torsion-leg-length-2-tol--" id="torsion-leg-length-2-tol--" placeholder="- Tolerance" step="0.001" data-error="Outer diameter must be greater than 0.">
                     </div>   
             
                 </div>
@@ -1288,10 +1438,15 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group"> 
                     <label class="control-label tolerance" for="torsion-leg-length-2-tol-+">+ Tolerance</label>
                     <div>
-                      <input type="number" min="0" class="form-control" name="torsion-leg-length-2-tol-+" id="torsion-leg-length-2-tol-+" step="0.1" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+                      <input type="number" min="0" class="form-control" name="torsion-leg-length-2-tol-+" id="torsion-leg-length-2-tol-+" step="0.001" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
                     </div>    
             
                 </div>
+            </div>
+        </div>
+                   <div class="row">
+           <div class="col-sm-12">
+              <div id='ErrorLocation'></div>
             </div>
         </div>
           <div class="row">
@@ -1315,18 +1470,18 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                 <div class="form-group has-feedback "> 
                   <label class="control-label" for="wire_form-wire-type">Type of Wire:</label>
               <div>
-              <select class="form-control" id="wire_form-wire-type" required>
-                  <option value="A228">Music Wire</option>
+              <select class="form-control required" id="wire_form-wire-type" required>
+                  <option value="79.3">Music Wire</option>
 
-                  <option value="A229">Chrome Vanadium</option>
+                  <option value="79.3">Chrome Vanadium</option>
 
-                  <option value="A230">Chrome Silicon</option>
+                  <option value="79.3">Chrome Silicon</option>
 
-                  <option value="A227">Stainless Steel Wire: Austenitic Type 302</option>
+                  <option value="69">Stainless Steel Wire: Austenitic Type 302</option>
 
-                  <option value="A313_17">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
+                  <option value="75.8">Stainless Steel Wire: Precipitation Hardening 17-7 PH</option>
 
-                  <option value="A313_302">Inconel Alloy X750</option>
+                  <option value="79.3">Inconel Alloy X750</option>
               </select>
               </div>
                 </div>
@@ -1348,7 +1503,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
 
             <label class="control-label" for="wire_form-wire-diameter">Wire Diameter:</label>
             <div >
-              <input type="number" min="0" class="form-control " name="wire_form-wire-diameter" step="0.1" id="wire_form-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
+              <input type="number" min="0" class="form-control " name="wire_form-wire-diameter" step="0.001" id="wire_form-wire-diameter" placeholder="Enter wire diameter." data-error="Wire diameter must be greater than 0.">
             </div>
                 </div>
                     </div>
@@ -1357,7 +1512,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                                 <div class="form-group has-feedback "> 
             <label class="control-label tolerance" for="form-wire-diameter-tol--">- Tolerance</label>
             <div >
-              <input type="number" min="0" class="form-control " name="form-wire-diameter-tol--" step="0.1" id="form-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
+              <input type="number" min="0" class="form-control " name="form-wire-diameter-tol--" step="0.001" id="form-wire-diameter-tol--" placeholder="- Tolerance" data-error="Wire diameter must be greater than 0.">
             </div>                   
                                     
                                     
@@ -1367,7 +1522,7 @@ $(document).on('click','.navbar-collapse.in',function(e) {
                                 <div class="form-group has-feedback "> 
             <label class="control-label tolerance" for="form-wire-diameter-tol-+">+ Tolerance</label>
             <div >
-              <input type="number" step="0.1" min="0" class="form-control " name="form-wire-diameter-tol-+" id="form-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
+              <input type="number" step="0.001" min="0" class="form-control " name="form-wire-diameter-tol-+" id="form-wire-diameter-tol-+" placeholder="+ Tolerance" data-error="Wire diameter must be greater than 0.">
             </div>                   
                                     
                                     
@@ -1377,8 +1532,11 @@ $(document).on('click','.navbar-collapse.in',function(e) {
         </div>            
              
 
-            <br>
-            <br>
+                      <div class="row">
+           <div class="col-sm-12">
+              <div id='ErrorLocation'></div>
+            </div>
+        </div>
         <div class="row">
             <label class="control-label col-md-2 col-sm-3" for="number">Custom Specifications:</label>
             <div class="col-md-10 col-sm-9">
@@ -1523,26 +1681,107 @@ marker.setMap(map);
 </footer>
 
 <script>
+//global variables    
+var currForm;
+
+var compressUnits=1;
+var compressEnds =0;
+    
+var extensionUnits;
+var extensionEnds;
+    
+var torsionUnits;
+var torsionEnds;
 //ran on page load
 
 $(document).ready(
 
 
 function(){ 
-var currForm
 
-    
-
+//form listeners to inform form logic
 
     
     
-
+$("#calculatorTabs li a").click(function () {
+    		currForm = $(this).parent().prevAll().length;
+	});     
     
-            
-
+    
+$("#compressionUnits li a").click(function () {
+    		compressUnits = $(this).parent().prevAll().length;
+    
+      //fields
+var young = $('#compression-wire-type').val()
+var wireDiameter = $('#compression-wire-diameter').val()
+var outerDiameter = $('#compression-outer-diameter').val()
+var numberCoils = $('#compression-active-coils').val()
+var freeLength =$('#compression-free-length').val()
+ var youngNum = parseFloat(young)
+ var wireDiameterNum = parseFloat(wireDiameter)
+ var outerDiameterNum = parseFloat(outerDiameter)
+ var numberCoilsNum = parseFloat(numberCoils)
+ var freeLengthNum = parseFloat(freeLength)
+                //RATE//
+if(//check if fields filled out
+    young!=''&&
+    wireDiameter!=''&&
+    outerDiameter!=''&&
+   numberCoils!=''
+){
+ var meanDiameter = outerDiameterNum - wireDiameterNum   
+    
+    //check units used 
+    if(compressUnits == 0){
+        var rate =((youngNum * Math.pow(wireDiameterNum, 3)) / ( 8 * numberCoilsNum * Math.pow(meanDiameter, 3))).toFixed(4).toString().concat(' lb./in.')
+        document.getElementById('compression-rate-field').innerHTML = rate        
+    } else if(compressUnits==1){
+        
+        var rate =  (1000* (youngNum * Math.pow(wireDiameterNum, 3)) / ( 8 * numberCoils * Math.pow(meanDiameter, 3))).toFixed(4).toString().concat(' N/m')
+        document.getElementById('compression-rate-field').innerHTML = rate   
+    } 
+} 
+    //FREE LENGTH//
+ if(//check if fields filled out
+    wireDiameter!=''&&
+    freeLength!=''&&
+   numberCoils!=''
+){
+     var totalDeadLength = numberCoilsNum * wireDiameterNum
+     
+     var maxTravel =  (.85 *(freeLengthNum -  totalDeadLength)).toFixed(2).toString()
+     if(compressUnits == 0){
+     document.getElementById('compression-maximum-compression-field').innerHTML=maxTravel.concat(' in.')    
+     } 
+     else if (compressUnits==1){
+     document.getElementById('compression-maximum-compression-field').innerHTML=maxTravel.concat(' mm.')           
+    }
+ }
+    
+    
+	});  
+    
+    
+$("#compressEnds li a").click(function () {
+    		compressEnds = $(this).parent().prevAll().length;
+	}); 
  
+ $("#extensionUnits li a").click(function () {
+    		extensionUnits = $(this).parent().prevAll().length;
+     
+	});          
+$("#extensionEnds li a").click(function () {
+    		extensionEnds = $(this).parent().prevAll().length;
     
-
+	});    
+ $("#torsionUnits li a").click(function () {
+    		torsionUnits = $(this).parent().prevAll().length;
+     
+	});          
+$("#torsionEnds li a").click(function () {
+    		torsionEnds = $(this).parent().prevAll().length;
+    
+	});   
     
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -1572,7 +1811,7 @@ var currForm
 
     
     
-
+//add extra fields for extension springs
 $('#extensionEnds').on('click','li > a',function(){
 
     var button = $(this);

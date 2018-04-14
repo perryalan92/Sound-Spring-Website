@@ -4,26 +4,28 @@ function(){
 $.validator.setDefaults({
    
     errorElement: "span",
-    
+    errorLabelContainer: "#errorLocation",
     errorClass: "help-block",
     highlight: function (element, errorClass, validClass) {
         // Only validation controls
-        if (!$(element).hasClass('novalidation')) {
+        if (!$(element).hasClass('has-error')) {
             $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        } else {
+            $(element).closest('.form-group').removeClass('has-error').removeClass('has-success').addClass('has-success');
         }
     },
     unhighlight: function (element, errorClass, validClass) {
         // Only validation controls
-        if (!$(element).hasClass('novalidation')) {
+        if (!$(element).hasClass('has-success')) {
             $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+        } else {
+            $(element).closest('.form-group').removeClass('has-error').removeClass('has-success').addClass('has-success');
         }
     },
     errorPlacement: function(error, element) {
-        if($(element).closest('.form-group').length) {
-            error.insertAfter(element.parent());
-        } else {
+
             error.insertAfter(element);
-        }
+        
     }
 });    
       
@@ -60,9 +62,9 @@ $.validator.setDefaults({
         */
        //RETURN
        if (4<=index && index<=15)
-           return true
+           return true;
        else 
-           return false
+           return false;
    }
       else
       {return true}
